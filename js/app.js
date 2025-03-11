@@ -1387,7 +1387,7 @@ $(document).ready(() => {
 
 
 
-    $.getJSON('data/data.json', function(jsonArray) {
+    $.getJSON('https://va11ydate.github.io/accessibility-checklist/data/data.json', function(jsonArray) {
         const groupedByCategory = {};
         const groupedByCategorySummary = {};
         const taskCategories = new Set();
