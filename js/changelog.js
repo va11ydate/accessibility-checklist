@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    const apiUrl = 'https://api.github.com/repos/vodafone-de/accessibility-checklist/commits';
+    const apiUrl = 'https://api.github.com/repos/va11ydate/accessibility-checklist/commits';
     const changelogContainer = document.getElementById('changelog-container');
     const latestVersionSpan = document.getElementById('latest-version');
 
