@@ -1,0 +1,762 @@
+{
+    "Form": [
+        {
+            "id": "01-01",
+            "title": "Activation of accessibility features",
+            "bitv": "5.2",
+            "category": "Generic requirements"
+        },
+        {
+            "id": "01-02",
+            "title": "Biometrics",
+            "bitv": "5.3",
+            "category": "Generic requirements"
+        },
+        {
+            "id": "03-01",
+            "title": "Captioning playback",
+            "bitv": "7.1.1",
+            "category": "Video capabilities"
+        },
+        {
+            "id": "04-04",
+            "title": "Alternatives for CAPTCHAs",
+            "bitv": "9.1.1.1d",
+            "category": "Text alternatives"
+        },
+        {
+            "id": "12-03",
+            "title": "Sichtbare Beschriftung Teil des zugänglichen Namens",
+            "bitv": "9.2.5.3",
+            "category": "Input modalities"
+        },
+        {
+            "id": "14-01",
+            "title": "Keine unerwartete Kontextänderung bei Fokus",
+            "bitv": "9.3.2.1",
+            "category": "Predictable"
+        },
+        {
+            "id": "14-02",
+            "title": "Keine unerwartete Kontextänderung bei Eingabe",
+            "bitv": "9.3.2.2",
+            "category": "Predictable"
+        },
+        {
+            "id": "15-01",
+            "title": "Fehlererkennung",
+            "bitv": "9.3.3.1",
+            "category": "Eingabeunterstützung"
+        },
+        {
+            "id": "15-02",
+            "title": "Beschriftungen von Formularelementen vorhanden",
+            "bitv": "9.3.3.2",
+            "category": "Eingabeunterstützung"
+        },
+        {
+            "id": "15-03",
+            "title": "Hilfe bei Fehlern",
+            "bitv": "9.3.3.3",
+            "category": "Eingabeunterstützung"
+        },
+        {
+            "id": "15-04",
+            "title": "Fehlervermeidung wird unterstützt",
+            "bitv": "9.3.3.4",
+            "category": "Eingabeunterstützung"
+        },
+        {
+            "id": "15-05",
+            "title": "Redundanter Eintrag",
+            "bitv": "9.3.3.7",
+            "category": "Eingabeunterstützung"
+        },
+        {
+            "id": "15-06",
+            "title": "Zugängliche Authentifizierung (Minimum)",
+            "bitv": "9.3.3.8",
+            "category": "Eingabeunterstützung"
+        }
+    ],
+    "Text Content": [
+        {
+            "id": "01-01",
+            "title": "Activation of accessibility features",
+            "bitv": "5.2",
+            "category": "Generic requirements"
+        },
+        {
+            "id": "01-02",
+            "title": "Biometrics",
+            "bitv": "5.3",
+            "category": "Generic requirements"
+        },
+        {
+            "id": "03-01",
+            "title": "Captioning playback",
+            "bitv": "7.1.1",
+            "category": "Video capabilities"
+        },
+        {
+            "id": "07-03",
+            "title": "Kontraste von Texten ausreichend",
+            "bitv": "9.1.4.3",
+            "category": "Distinguishable"
+        },
+        {
+            "id": "07-04",
+            "title": "Text auf 200% vergrößerbar",
+            "bitv": "9.1.4.4",
+            "category": "Distinguishable"
+        },
+        {
+            "id": "07-08",
+            "title": "Textabstände anpassbar",
+            "bitv": "9.1.4.12",
+            "category": "Distinguishable"
+        },
+        {
+            "id": "11-06",
+            "title": "Aussagekräftige Überschriften und Beschriftungen",
+            "bitv": "9.2.4.6",
+            "category": "Navigierbar"
+        },
+        {
+            "id": "13-01",
+            "title": "Hauptsprache angegeben",
+            "bitv": "9.3.1.1",
+            "category": "Readable"
+        },
+        {
+            "id": "13-02",
+            "title": "Anderssprachige Wörter und Abschnitte ausgezeichnet",
+            "bitv": "9.3.1.2",
+            "category": "Readable"
+        }
+    ],
+    "Non-text Content": [
+        {
+            "id": "04-01",
+            "title": "Text alternatives for Controls & Input",
+            "bitv": "9.1.1.1a",
+            "category": "Text alternatives"
+        },
+        {
+            "id": "04-02",
+            "title": "Text alternatives for images and objects",
+            "bitv": "9.1.1.1b",
+            "category": "Text alternatives"
+        },
+        {
+            "id": "04-03",
+            "title": "Empty alt attributes for decorative images and icons",
+            "bitv": "9.1.1.1c",
+            "category": "Text alternatives"
+        },
+        {
+            "id": "04-04",
+            "title": "Alternatives for CAPTCHAs",
+            "bitv": "9.1.1.1d",
+            "category": "Text alternatives"
+        },
+        {
+            "id": "05-01",
+            "title": "Alternatives for Audio-only and video-only (pre-recorded)",
+            "bitv": "9.1.2.1",
+            "category": "Time-based media"
+        },
+        {
+            "id": "05-02",
+            "title": "Captions (pre-recorded)",
+            "bitv": "9.1.2.2",
+            "category": "Time-based media"
+        },
+        {
+            "id": "07-05",
+            "title": "Schriftgrafiken",
+            "bitv": "9.1.4.5",
+            "category": "Distinguishable"
+        },
+        {
+            "id": "07-07",
+            "title": "Kontraste von Grafiken und grafischen Bedienelementen ausreichend",
+            "bitv": "9.1.4.11",
+            "category": "Distinguishable"
+        }
+    ],
+    "Colors and contrasts": [
+        {
+            "id": "01-01",
+            "title": "Activation of accessibility features",
+            "bitv": "5.2",
+            "category": "Generic requirements"
+        },
+        {
+            "id": "01-02",
+            "title": "Biometrics",
+            "bitv": "5.3",
+            "category": "Generic requirements"
+        },
+        {
+            "id": "03-01",
+            "title": "Captioning playback",
+            "bitv": "7.1.1",
+            "category": "Video capabilities"
+        },
+        {
+            "id": "07-01",
+            "title": "Ohne Farben nutzbar",
+            "bitv": "9.1.4.1",
+            "category": "Distinguishable"
+        },
+        {
+            "id": "07-03",
+            "title": "Kontraste von Texten ausreichend",
+            "bitv": "9.1.4.3",
+            "category": "Distinguishable"
+        },
+        {
+            "id": "07-07",
+            "title": "Kontraste von Grafiken und grafischen Bedienelementen ausreichend",
+            "bitv": "9.1.4.11",
+            "category": "Distinguishable"
+        },
+        {
+            "id": "11-07",
+            "title": "Aktuelle Position des Fokus deutlich",
+            "bitv": "9.2.4.7",
+            "category": "Navigierbar"
+        }
+    ],
+    "Common navigation": [
+        {
+            "id": "11-06",
+            "title": "Aussagekräftige Überschriften und Beschriftungen",
+            "bitv": "9.2.4.6",
+            "category": "Navigierbar"
+        }
+    ],
+    "Keyboard navigation": [
+        {
+            "id": "08-01",
+            "title": "Ohne Maus nutzbar",
+            "bitv": "9.2.1.1",
+            "category": "Keyboard operable"
+        },
+        {
+            "id": "08-02",
+            "title": "No keyboard trap",
+            "bitv": "9.2.1.2",
+            "category": "Keyboard operable"
+        },
+        {
+            "id": "08-03",
+            "title": "Tastatur-Kurzbefehle abschaltbar oder anpassbar",
+            "bitv": "9.2.1.4",
+            "category": "Keyboard operable"
+        },
+        {
+            "id": "11-03",
+            "title": "Schlüssige Reihenfolge bei der Tastaturbedienung",
+            "bitv": "9.2.4.3",
+            "category": "Navigierbar"
+        },
+        {
+            "id": "11-07",
+            "title": "Aktuelle Position des Fokus deutlich",
+            "bitv": "9.2.4.7",
+            "category": "Navigierbar"
+        },
+        {
+            "id": "11-08",
+            "title": "Fokus nicht verdeckt (Minimum)",
+            "bitv": "9.2.4.11",
+            "category": "Navigierbar"
+        },
+        {
+            "id": "14-01",
+            "title": "Keine unerwartete Kontextänderung bei Fokus",
+            "bitv": "9.3.2.1",
+            "category": "Predictable"
+        },
+        {
+            "id": "14-02",
+            "title": "Keine unerwartete Kontextänderung bei Eingabe",
+            "bitv": "9.3.2.2",
+            "category": "Predictable"
+        }
+    ],
+    "Layout": [
+        {
+            "id": "07-04",
+            "title": "Text auf 200% vergrößerbar",
+            "bitv": "9.1.4.4",
+            "category": "Distinguishable"
+        },
+        {
+            "id": "07-06",
+            "title": "Inhalte brechen um",
+            "bitv": "9.1.4.10",
+            "category": "Distinguishable"
+        }
+    ],
+    "Touch and interactions": [
+        {
+            "id": "12-02",
+            "title": "Zeigergesten-Eingaben können abgebrochen oder widerrufen werden",
+            "bitv": "9.2.5.2",
+            "category": "Input modalities"
+        }
+    ],
+    "Multimedia": [
+        {
+            "id": "03-01",
+            "title": "Captioning playback",
+            "bitv": "7.1.1",
+            "category": "Video capabilities"
+        },
+        {
+            "id": "05-01",
+            "title": "Alternatives for Audio-only and video-only (pre-recorded)",
+            "bitv": "9.1.2.1",
+            "category": "Time-based media"
+        },
+        {
+            "id": "05-02",
+            "title": "Captions (pre-recorded)",
+            "bitv": "9.1.2.2",
+            "category": "Time-based media"
+        }
+    ],
+    "Assistive technology": [
+        {
+            "id": "04-01",
+            "title": "Text alternatives for Controls & Input",
+            "bitv": "9.1.1.1a",
+            "category": "Text alternatives"
+        },
+        {
+            "id": "04-02",
+            "title": "Text alternatives for images and objects",
+            "bitv": "9.1.1.1b",
+            "category": "Text alternatives"
+        }
+    ],
+    "Other": [
+        {
+            "id": "01-03",
+            "title": "Erhaltung von Barrierefreiheitsinformationen bei Konvertierung",
+            "bitv": "5.4",
+            "category": "Generic requirements"
+        },
+        {
+            "id": "02-01",
+            "title": "Audiobandbreite für Sprache",
+            "bitv": "6.1",
+            "category": "Two-way voice communication"
+        },
+        {
+            "id": "02-02",
+            "title": "Textkommunikation in Echtzeit",
+            "bitv": "6.2.1.1",
+            "category": "Two-way voice communication"
+        },
+        {
+            "id": "02-03",
+            "title": "Gleichzeitige Sprache und Text",
+            "bitv": "6.2.1.2",
+            "category": "Two-way voice communication"
+        },
+        {
+            "id": "02-04",
+            "title": "Visuell unterscheidbare Anzeige von Textnachrichten",
+            "bitv": "6.2.2.1",
+            "category": "Two-way voice communication"
+        },
+        {
+            "id": "02-05",
+            "title": "Programmatisch unterscheidbare Anzeige von Textnachrichten",
+            "bitv": "6.2.2.2",
+            "category": "Two-way voice communication"
+        },
+        {
+            "id": "02-06",
+            "title": "Sprecheridentifizierung",
+            "bitv": "6.2.2.3",
+            "category": "Two-way voice communication"
+        },
+        {
+            "id": "02-07",
+            "title": "Echtzeitindikation von Sprachkommunikation",
+            "bitv": "6.2.2.4",
+            "category": "Two-way voice communication"
+        },
+        {
+            "id": "02-08",
+            "title": "Interoperabilität von Echtzeit-Textkommunikation",
+            "bitv": "6.2.3",
+            "category": "Two-way voice communication"
+        },
+        {
+            "id": "02-09",
+            "title": "Reaktionsgeschwindigkeit der Echtzeit-Textkommunikation",
+            "bitv": "6.2.4",
+            "category": "Two-way voice communication"
+        },
+        {
+            "id": "02-10",
+            "title": "Anrufer-Identifizierung",
+            "bitv": "6.3",
+            "category": "Two-way voice communication"
+        },
+        {
+            "id": "02-11",
+            "title": "Alternativen zu sprachbasierten Diensten",
+            "bitv": "6.4",
+            "category": "Two-way voice communication"
+        },
+        {
+            "id": "02-12",
+            "title": "Auflösung bei Videotelefonie",
+            "bitv": "6.5.2",
+            "category": "Two-way voice communication"
+        },
+        {
+            "id": "02-13",
+            "title": "Bildwiederholfrequenz bei Videotelefonie",
+            "bitv": "6.5.3",
+            "category": "Two-way voice communication"
+        },
+        {
+            "id": "02-14",
+            "title": "Synchronität bei Videotelefonie",
+            "bitv": "6.5.4",
+            "category": "Two-way voice communication"
+        },
+        {
+            "id": "02-15",
+            "title": "Visuelle Anzeige von Audio-Aktivität",
+            "bitv": "6.5.5",
+            "category": "Two-way voice communication"
+        },
+        {
+            "id": "02-16",
+            "title": "Sprecher-Anzeige für Gebärdensprachen-Kommunikation",
+            "bitv": "6.5.6",
+            "category": "Two-way voice communication"
+        },
+        {
+            "id": "03-02",
+            "title": "Synchrone Untertitel",
+            "bitv": "7.1.2",
+            "category": "Video capabilities"
+        },
+        {
+            "id": "03-03",
+            "title": "Erhaltung von Untertiteln",
+            "bitv": "7.1.3",
+            "category": "Video capabilities"
+        },
+        {
+            "id": "03-04",
+            "title": "Untertitel-Anpassungen",
+            "bitv": "7.1.4",
+            "category": "Video capabilities"
+        },
+        {
+            "id": "03-05",
+            "title": "Gesprochene Untertitel",
+            "bitv": "7.1.5",
+            "category": "Video capabilities"
+        },
+        {
+            "id": "03-06",
+            "title": "Wiedergabe von Audiodeskription",
+            "bitv": "7.2.1",
+            "category": "Video capabilities"
+        },
+        {
+            "id": "03-07",
+            "title": "Synchrone Audiodeskription",
+            "bitv": "7.2.2",
+            "category": "Video capabilities"
+        },
+        {
+            "id": "03-08",
+            "title": "Erhaltung von Audiodeskription",
+            "bitv": "7.2.3",
+            "category": "Video capabilities"
+        },
+        {
+            "id": "03-09",
+            "title": "Bedienelemente für Untertitel und Audiodeskription",
+            "bitv": "7.3",
+            "category": "Video capabilities"
+        },
+        {
+            "id": "05-03",
+            "title": "Audiodeskription oder Volltext-Alternative für Videos",
+            "bitv": "9.1.2.3",
+            "category": "Time-based media"
+        },
+        {
+            "id": "05-04",
+            "title": "Videos (live) mit Untertiteln",
+            "bitv": "9.1.2.4",
+            "category": "Time-based media"
+        },
+        {
+            "id": "05-05",
+            "title": "Audiodeskription für Videos",
+            "bitv": "9.1.2.5",
+            "category": "Time-based media"
+        },
+        {
+            "id": "06-01",
+            "title": "HTML-Strukturelemente für Überschriften",
+            "bitv": "9.1.3.1a",
+            "category": "Adaptable"
+        },
+        {
+            "id": "06-02",
+            "title": "HTML-Strukturelemente für Listen",
+            "bitv": "9.1.3.1b",
+            "category": "Adaptable"
+        },
+        {
+            "id": "06-03",
+            "title": "HTML-Strukturelemente für Zitate",
+            "bitv": "9.1.3.1c",
+            "category": "Adaptable"
+        },
+        {
+            "id": "06-04",
+            "title": "Inhalt gegliedert",
+            "bitv": "9.1.3.1d",
+            "category": "Adaptable"
+        },
+        {
+            "id": "06-05",
+            "title": "Datentabellen richtig aufgebaut",
+            "bitv": "9.1.3.1e",
+            "category": "Adaptable"
+        },
+        {
+            "id": "06-06",
+            "title": "Zuordnung von Tabellenzellen",
+            "bitv": "9.1.3.1f",
+            "category": "Adaptable"
+        },
+        {
+            "id": "06-07",
+            "title": "Kein Strukturmarkup für Layouttabellen",
+            "bitv": "9.1.3.1g",
+            "category": "Adaptable"
+        },
+        {
+            "id": "06-08",
+            "title": "Beschriftung von Formularelementen programmatisch ermittelbar",
+            "bitv": "9.1.3.1h",
+            "category": "Adaptable"
+        },
+        {
+            "id": "06-09",
+            "title": "Sinnvolle Reihenfolge",
+            "bitv": "9.1.3.2",
+            "category": "Adaptable"
+        },
+        {
+            "id": "06-10",
+            "title": "Ohne Bezug auf sensorische Merkmale nutzbar",
+            "bitv": "9.1.3.3",
+            "category": "Adaptable"
+        },
+        {
+            "id": "06-11",
+            "title": "Keine Beschränkung der Bildschirmausrichtung",
+            "bitv": "9.1.3.4",
+            "category": "Adaptable"
+        },
+        {
+            "id": "06-12",
+            "title": "Eingabefelder zu Nutzerdaten vermitteln den Zweck",
+            "bitv": "9.1.3.5",
+            "category": "Adaptable"
+        },
+        {
+            "id": "07-02",
+            "title": "Ton abschaltbar",
+            "bitv": "9.1.4.2",
+            "category": "Distinguishable"
+        },
+        {
+            "id": "07-09",
+            "title": "Eingeblendete Inhalte bedienbar",
+            "bitv": "9.1.4.13",
+            "category": "Distinguishable"
+        },
+        {
+            "id": "09-01",
+            "title": "Zeitbegrenzungen anpassbar",
+            "bitv": "9.2.2.1",
+            "category": "Enough time"
+        },
+        {
+            "id": "09-02",
+            "title": "Bewegte Inhalte abschaltbar",
+            "bitv": "9.2.2.2",
+            "category": "Enough time"
+        },
+        {
+            "id": "10-01",
+            "title": "Verzicht auf Flackern",
+            "bitv": "9.2.3.1",
+            "category": "Seizure"
+        },
+        {
+            "id": "11-01",
+            "title": "Bereiche überspringbar",
+            "bitv": "9.2.4.1",
+            "category": "Navigierbar"
+        },
+        {
+            "id": "11-02",
+            "title": "Sinnvolle Dokumenttitel",
+            "bitv": "9.2.4.2",
+            "category": "Navigierbar"
+        },
+        {
+            "id": "11-04",
+            "title": "Aussagekräftige Linktexte",
+            "bitv": "9.2.4.4",
+            "category": "Navigierbar"
+        },
+        {
+            "id": "11-05",
+            "title": "Alternative Zugangswege",
+            "bitv": "9.2.4.5",
+            "category": "Navigierbar"
+        },
+        {
+            "id": "12-01",
+            "title": "Alternativen für komplexe Zeiger-Gesten",
+            "bitv": "9.2.5.1",
+            "category": "Input modalities"
+        },
+        {
+            "id": "12-04",
+            "title": "Alternativen für Bewegungsaktivierung",
+            "bitv": "9.2.5.4",
+            "category": "Input modalities"
+        },
+        {
+            "id": "12-05",
+            "title": "Ziehbewegungen",
+            "bitv": "9.2.5.7",
+            "category": "Input modalities"
+        },
+        {
+            "id": "12-06",
+            "title": "Zielgröße (Minimum)",
+            "bitv": "9.2.5.8",
+            "category": "Input modalities"
+        },
+        {
+            "id": "14-03",
+            "title": "Konsistente Navigation",
+            "bitv": "9.3.2.3",
+            "category": "Predictable"
+        },
+        {
+            "id": "14-04",
+            "title": "Konsistente Bezeichnung",
+            "bitv": "9.3.2.4",
+            "category": "Predictable"
+        },
+        {
+            "id": "14-05",
+            "title": "Konsistente Hilfe",
+            "bitv": "9.3.2.6",
+            "category": "Predictable"
+        },
+        {
+            "id": "16-01",
+            "title": "Korrekte Syntax",
+            "bitv": "9.4.1.1",
+            "category": "Kompatibel"
+        },
+        {
+            "id": "16-02",
+            "title": "Name, Rolle, Wert verfügbar",
+            "bitv": "9.4.1.2",
+            "category": "Kompatibel"
+        },
+        {
+            "id": "16-03",
+            "title": "Statusmeldungen programmatisch verfügbar",
+            "bitv": "9.4.1.3",
+            "category": "Kompatibel"
+        },
+        {
+            "id": "17-01",
+            "title": "Benutzerdefinierte Einstellungen",
+            "bitv": "11.7",
+            "category": "Benutzerpräferenzen"
+        },
+        {
+            "id": "18-01",
+            "title": "Barrierefreie Erstellung von Inhalten",
+            "bitv": "11.8.2",
+            "category": "Autorenwerkzeuge"
+        },
+        {
+            "id": "18-02",
+            "title": "Erhaltung von Barrierefreiheitsinformationen bei Transformation",
+            "bitv": "11.8.3",
+            "category": "Autorenwerkzeuge"
+        },
+        {
+            "id": "18-03",
+            "title": "Reparaturassistenz",
+            "bitv": "11.8.4",
+            "category": "Autorenwerkzeuge"
+        },
+        {
+            "id": "18-04",
+            "title": "Vorlagen",
+            "bitv": "11.8.5",
+            "category": "Autorenwerkzeuge"
+        },
+        {
+            "id": "19-01",
+            "title": "Dokumentation von Kompatibilität und Barrierefreiheit",
+            "bitv": "12.1.1",
+            "category": "Dokumentation und Support"
+        },
+        {
+            "id": "19-02",
+            "title": "Barrierefreie Dokumentation",
+            "bitv": "12.1.2",
+            "category": "Dokumentation und Support"
+        },
+        {
+            "id": "19-03",
+            "title": "Technischer Support",
+            "bitv": "12.2.2",
+            "category": "Dokumentation und Support"
+        },
+        {
+            "id": "19-04",
+            "title": "Effektive Kommunikation",
+            "bitv": "12.2.3",
+            "category": "Dokumentation und Support"
+        },
+        {
+            "id": "19-05",
+            "title": "Vom Support bereitgestellte Dokumentation",
+            "bitv": "12.2.4",
+            "category": "Dokumentation und Support"
+        }
+    ]
+}
