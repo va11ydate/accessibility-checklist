@@ -213,7 +213,7 @@ class AuditInfoOverlay {
         };
 
         $('#addAuditInfo').text('Edit audit info');
-        $('#startAudit').replaceWith('<div class="auditTitle">' + auditData.auditName + '</div>');
+        $('#startAudit').replaceWith('<div id="auditTitle" class="auditTitle">' + auditData.auditName + '</div>');
         localStorage.setItem('auditInfo', JSON.stringify(auditData));
 
         this.displayAuditInfo(auditData);
@@ -281,15 +281,13 @@ class AuditInfoOverlay {
 
     deleteAuditInfo(e) {
         e.stopPropagation();
-        if (confirm('Are you sure you want to delete the Audit information?')) {
+        if (confirm('Are you sure you want to delete the Project information?')) {
             const AuditInfoItem = $(e.currentTarget).closest('.projectInfo');
             AuditInfoItem.remove();
             localStorage.removeItem('auditInfo');
             $('#addAuditInfo').text('Add audit info');
-            $('#startAudit').replaceWith('<button class="ws10-secondary-button overlayKeyOff" id="startAudit">Add project info</button>');
-
-            $('.profile-link').text('Accessibility User');
-            $('.avatar').text('AU');
+            $('#auditTitle').replaceWith('<button class="ws10-secondary-button overlayKeyOff" id="startAudit">Add project info</button>');
+            // $('#startAudit').replaceWith('<button class="ws10-secondary-button overlayKeyOff" id="startAudit">Add project info</button>');
         }
     }
 
