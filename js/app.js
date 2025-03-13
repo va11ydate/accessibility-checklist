@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    
 
     let fieldsetCount = 0;
     let selectedRadioCount = 0;
@@ -1942,7 +1943,7 @@ $(document).ready(() => {
                 const auditInfoSection = $(`
                     <div class="projectInfo summaryCardFlat">
                         <div class="infoContainer">
-                            <h4>Audit Information</h4>
+                            <h1>Audit Information</h1>
                             <p><strong>Audit name:</strong> ${auditData.auditName}</p>
                             <p><strong>Audited by:</strong> ${auditData.auditedBy}</p>
                             <p><strong>E-mail address:</strong> ${auditData.emailAddress}</p>

@@ -44,7 +44,7 @@ class AuditInfoOverlay {
                             </button>
                         </div>
                         <div class="audit-overlay-content ws10-overlay__content">
-                            <h5>Audit info</h5>
+                            <h1 class="span-h4" style="margin-bottom:16px;">Add project info</h1>
                             ${this.getAuditFormTemplate()}
                             ${this.getImageUploadTemplate()}
                         </div>
@@ -61,7 +61,7 @@ class AuditInfoOverlay {
         return `
             <div class="ws10-form-element-block ws10-form-element-block--text-input">
                 <div class="ws10-form-element-block__label-container">
-                    <label for="audit-name" class="ws10-form-label">Audit name</label>
+                    <label for="audit-name" class="ws10-form-label">Project name</label>
                 </div>
                 <div class="ws10-form-element-block__input-container">
                     <input type="text" id="audit-name" name="audit-name" class="form-text-input"/>
@@ -69,7 +69,7 @@ class AuditInfoOverlay {
             </div>
             <div class="ws10-form-element-block ws10-form-element-block--text-input">
                 <div class="ws10-form-element-block__label-container">
-                    <label for="audited-by" class="ws10-form-label">Audited by</label>
+                    <label for="audited-by" class="ws10-form-label">Checked by</label>
                 </div>
                 <div class="ws10-form-element-block__input-container">
                     <input type="text" id="audited-by" name="audited-by" class="form-text-input"/>
@@ -85,7 +85,7 @@ class AuditInfoOverlay {
             </div>
             <div class="ws10-form-element-block ws10-form-element-block--select">
                 <div class="ws10-form-element-block__label-container">
-                    <label for="audit-object" class="ws10-form-label">Audit object</label>
+                    <label for="audit-object" class="ws10-form-label">Object</label>
                 </div>
                 <div class="ws10-form-element-block__input-container">
                     <select id="audit-object" class="ws10-form-select ws10-form-select__select">
