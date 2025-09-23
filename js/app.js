@@ -626,7 +626,7 @@ $(document).ready(function() {
        
     const overlay = $(`<div class="slide-in-overlay-container">
         
-        <div id="slide-in-overlay" aria-modal="true" role="dialog" class="ws10-overlay ws10-fade ws10-overlay--slide ws10-overlay--spacing ws10-overlay--align-left" style="display: none;"> //transform: translateX(100%);
+        <div id="slide-in-overlay" aria-modal="true" role="dialog" class="ws10-overlay ws10-fade ws10-overlay--slide ws10-overlay--spacing ws10-overlay--align-left" style="display: none;">
             <div class="ws10-overlay__container">
                 <div class="ws10-overlay__close">
                 <button id="close-overlay" aria-label="Close" class="tabenable overlayKeyOn ws10-button-icon-only ws10-button-icon-only--tertiary ws10-button-icon-only--floating ws10-button-icon-only--standard close">
