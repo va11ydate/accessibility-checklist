@@ -139,5 +139,232 @@
                 }
             ]
         }
+    },
+    {
+        "id": "03-01",
+        "category": "Structure & Navigation",
+        "bitv": "3.1",
+        "title": "Headline structure",
+        "applicable": "applicable",
+        "roles": [
+            "ux"
+        ],
+        "dods": {
+            "uxtasks": [
+                {
+                    "roletitle": "User Experience"
+                },
+                {
+                    "taskid": "03-01-ux-01",
+                    "taskdesc": "Do headings follow a logical hierarchy (h1, h2, h3)?",
+                    "tasktype": "page",
+                    "taskcat": [
+                        "font",
+                        "headline"
+                    ],
+                    "testtool": "",
+                    "testmethod": ""
+                }
+            ]
+        }
+    },
+    {
+        "id": "03-02",
+        "category": "Structure & Navigation",
+        "bitv": "3.2",
+        "title": "Interactive order",
+        "applicable": "applicable",
+        "roles": [
+            "ux"
+        ],
+        "dods": {
+            "uxtasks": [
+                {
+                    "roletitle": "User Experience"
+                },
+                {
+                    "taskid": "03-02-ux-01",
+                    "taskdesc": "Does the visual order match the reading and keyboard navigation order?",
+                    "tasktype": "page",
+                    "taskcat": [
+                        "order",
+                        "interaction",
+                        "button",
+                        "link",
+                        "form"
+                    ],
+                    "testtool": "",
+                    "testmethod": ""
+                }
+            ]
+        }
+    },
+    {
+        "id": "03-03",
+        "category": "Structure & Navigation",
+        "bitv": "3.3",
+        "title": "Consistency",
+        "applicable": "applicable",
+        "roles": [
+            "ux"
+        ],
+        "dods": {
+            "uxtasks": [
+                {
+                    "roletitle": "User Experience"
+                },
+                {
+                    "taskid": "03-03-ux-01",
+                    "taskdesc": "Are consistent layouts used across all pages?",
+                    "tasktype": "page",
+                    "taskcat": [
+                        "font",
+                        "headline"
+                    ],
+                    "testtool": "",
+                    "testmethod": ""
+                }
+            ]
+        }
+    },
+    {
+        "id": "03-04",
+        "category": "Structure & Navigation",
+        "bitv": "3.4",
+        "title": "Predicatablity",
+        "applicable": "applicable",
+        "roles": [
+            "ux"
+        ],
+        "dods": {
+            "uxtasks": [
+                {
+                    "roletitle": "User Experience"
+                },
+                {
+                    "taskid": "03-04-ux-01",
+                    "taskdesc": "Is predictable navigation and structure maintained?",
+                    "tasktype": "page",
+                    "taskcat": [
+                        "font",
+                        "headline"
+                    ],
+                    "testtool": "",
+                    "testmethod": ""
+                }
+            ]
+        }
+    },
+    {
+        "id": "03-05",
+        "category": "Structure & Navigation",
+        "bitv": "3.5",
+        "title": "Predicatablity",
+        "applicable": "applicable",
+        "roles": [
+            "ux"
+        ],
+        "dods": {
+            "uxtasks": [
+                {
+                    "roletitle": "User Experience"
+                },
+                {
+                    "taskid": "03-05-ux-01",
+                    "taskdesc": "Are semantic connections with visual elements preserved?",
+                    "tasktype": "page",
+                    "taskcat": [
+                        "font",
+                        "headline"
+                    ],
+                    "testtool": "",
+                    "testmethod": ""
+                }
+            ]
+        }
+    },
+    {
+        "id": "03-06",
+        "category": "Structure & Navigation",
+        "bitv": "3.6",
+        "title": "Skip links",
+        "applicable": "applicable",
+        "roles": [
+            "ux"
+        ],
+        "dods": {
+            "uxtasks": [
+                {
+                    "roletitle": "User Experience"
+                },
+                {
+                    "taskid": "03-06-ux-01",
+                    "taskdesc": "Are skip links provided to bypass repetitive navigation?",
+                    "tasktype": "page",
+                    "taskcat": [
+                        "font",
+                        "headline"
+                    ],
+                    "testtool": "",
+                    "testmethod": ""
+                }
+            ]
+        }
+    },
+    {
+        "id": "04-01",
+        "category": "Links & Descriptions",
+        "bitv": "4.1",
+        "title": "Link text",
+        "applicable": "applicable",
+        "roles": [
+            "ux"
+        ],
+        "dods": {
+            "uxtasks": [
+                {
+                    "roletitle": "User Experience"
+                },
+                {
+                    "taskid": "04-01-ux-01",
+                    "taskdesc": "Do links clearly describe their destination?",
+                    "tasktype": "page",
+                    "taskcat": [
+                        "font",
+                        "headline"
+                    ],
+                    "testtool": "",
+                    "testmethod": ""
+                }
+            ]
+        }
+    },
+        {
+        "id": "04-02",
+        "category": "Links & Descriptions",
+        "bitv": "4.2",
+        "title": "QR Codes",
+        "applicable": "applicable",
+        "roles": [
+            "ux"
+        ],
+        "dods": {
+            "uxtasks": [
+                {
+                    "roletitle": "User Experience"
+                },
+                {
+                    "taskid": "04-02-ux-01",
+                    "taskdesc": "Do QR codes have descriptive alt text plus a regular text link alternative?",
+                    "tasktype": "page",
+                    "taskcat": [
+                        "qr",
+                        "alternative text"
+                    ],
+                    "testtool": "",
+                    "testmethod": ""
+                }
+            ]
+        }
     }
 ]
