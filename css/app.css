@@ -2954,6 +2954,11 @@ font-size:12px;
 
 
 
+.instrimg {
+    width: 100%;
+    margin: 16px 0;
+}
+
 
 
 .action input:checked + span {
