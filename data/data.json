@@ -22,7 +22,7 @@
                     "tasktype": "",
                     "taskcat": [],
                     "testtool": "Figma Plugin xyz",
-                    "testmethod": "Test it like it's hot<br><img src='https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoidm9kYWZvbmVcL2ZpbGVcL0N6QWo0Tjl2MVhjTWJzYWVFQzN5LnBuZyJ9:vodafone:IMNwGe00w6Wq1utp1gxstmY-snS_jqmHPfcGIXYapec?width=800&format=webp&quality=100' alt=''>"
+                    "testmethod": "Test it like it's hot <img class='instrimg' src='https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoidm9kYWZvbmVcL2ZpbGVcL0N6QWo0Tjl2MVhjTWJzYWVFQzN5LnBuZyJ9:vodafone:IMNwGe00w6Wq1utp1gxstmY-snS_jqmHPfcGIXYapec?width=800&format=webp&quality=100' alt=''>"
                 }
             ],
             "uxtasks": [
