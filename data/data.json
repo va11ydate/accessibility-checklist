@@ -71,7 +71,7 @@
                 },
                 {
                     "taskid": "02-01-ux-01",
-                    "taskdesc": "Is color used alone to convey meaning (e.g., red = error)?",
+                    "taskdesc": "Is color used alone to convey meaning (e.g., red = error)? <img src='https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoidm9kYWZvbmVcL2ZpbGVcL2lVY1J1ckhOWUw0eTZCSll0dzl1LnBuZyJ9:vodafone:hR8rB-6-cnkFgFwNrriRf1BXtXPkKtwXbYU2f-1ArvY?width=684&format=webp&quality=100' class='instrimg' alt=''>",
                     "tasktype": "pattern",
                     "taskcat": [
                         "color",
