@@ -1,56 +1,241 @@
 [
     {
         "id": "01-01",
-        "category": "Typography & Text",
-        "bitv": "1.1",
-        "title": "Font size",
+        "category": "Form",
+        "bitv": "5.2",
+        "title": "Activation of accessibility features",
         "applicable": "applicable",
         "roles": [
-            "ux"
+            "ux",
+            "dev",
+            "edt",
+            "testing"
         ],
         "dods": {
+            "audittasks": [
+                {
+                    "roletitle": "Audit"
+                },
+                {
+                    "taskid": "01-01-audit-01",
+                    "taskdesc": "",
+                    "tasktype": "",
+                    "taskcat": [],
+                    "testtool": "Figma Plugin xyz",
+                    "testmethod": "Test it like it's hot"
+                }
+            ],
             "uxtasks": [
                 {
                     "roletitle": "User Experience"
                 },
                 {
                     "taskid": "01-01-ux-01",
-                    "taskdesc": "Is the font size for normal text less than 24px and for bold text less than 19px?",
+                    "taskdesc": "User Experience Lorem ipsum task 1",
                     "tasktype": "pattern",
                     "taskcat": [
-                        "font",
-                        "size"
+                        "design",
+                        "color",
+                        "button"
                     ],
-                    "testtool": "",
-                    "testmethod": ""
+                    "testtool": "Figma Plugin xyz",
+                    "testmethod": "Test it like it's hot"
+                },
+                {
+                    "taskid": "01-01-ux-02",
+                    "taskdesc": "Lorem ipsum task 2 UX",
+                    "tasktype": "page",
+                    "taskcat": [
+                        "forms",
+                        "contrast"
+                    ],
+                    "testtool": "Browser Plugin xyz",
+                    "testmethod": "Test it like it's hot"
+                }
+            ],
+            "devtasks": [
+                {
+                    "roletitle": "Frontend Development"
+                },
+                {
+                    "taskid": "01-01-dev-01",
+                    "taskdesc": "Dev Lorem ipsum task 1",
+                    "tasktype": "pattern",
+                    "taskcat": [
+                        "color",
+                        "button"
+                    ],
+                    "testtool": "Chrome Plugin xyz",
+                    "testmethod": "Test it like it's hot"
+                }
+            ],
+            "edttasks": [
+                {
+                    "roletitle": "Editorial"
+                },
+                {
+                    "taskid": "01-01-edt-01",
+                    "taskdesc": "Editorial lorem ipsum task 1",
+                    "tasktype": "page",
+                    "taskcat": [
+                        "cms",
+                        "button",
+                        "text"
+                    ],
+                    "testtool": "Figma Plugin xyz",
+                    "testmethod": "Test it like it's hot"
+                }
+            ],
+            "testingtasks": [
+                {
+                    "roletitle": "WF Testing: Tool supported WF"
+                },
+                {
+                    "taskid": "01-01-test-01",
+                    "taskdesc": "Testing Lorem ipsum task 1",
+                    "tasktype": "pattern",
+                    "taskcat": [
+                        "color",
+                        "button"
+                    ],
+                    "testtool": "ARC Tool Kit",
+                    "testmethod": "Graphical user interface elements (all linked/interactive graphics and images) must be provided with alternative texts [...][...]",
+                    "testtoollink": "<a href='https://www.tpgi.com/arc-platform/arc-toolkit/' target='_blank'>Download ARCToolKit</a>"
+                }
+            ],
+            "testingwftooltasks": [
+                {
+                    "roletitle": "WF Testing: Tool supported WF"
+                },
+                {
+                    "taskid": "01-01-testwft-01",
+                    "taskdesc": "Testing Lorem ipsum task 1",
+                    "tasktype": "pattern",
+                    "taskcat": [
+                        "color",
+                        "button"
+                    ],
+                    "testtool": "<p>ARC Tool Kit</p> <img src='img/arc-toolkit-screen.png' width='100%' alt='Screenshot of ARC Toolkit'> ",
+                    "testmethod": "Graphical user interface elements (all linked/interactive graphics and images) must be provided with alternative texts [...][...]"
+                }
+            ],
+            "testingwfmantasks": [
+                {
+                    "roletitle": "WF Testing: Manual without additional info"
+                },
+                {
+                    "taskid": "01-01-testwfm0-01",
+                    "taskdesc": "Testing Lorem ipsum task 1",
+                    "tasktype": "pattern",
+                    "taskcat": [
+                        "color",
+                        "button"
+                    ],
+                    "testtool": "ARC Tool Kit",
+                    "testmethod": "Graphical user interface elements (all linked/interactive graphics and images) must be provided with alternative texts [...][...]"
+                }
+            ],
+            "testingwfmanexttasks": [
+                {
+                    "roletitle": "WF Testing: Manual with additional info"
+                },
+                {
+                    "taskid": "01-01-testwfm1-01",
+                    "taskdesc": "Testing Lorem ipsum task 1",
+                    "tasktype": "pattern",
+                    "taskcat": [
+                        "color",
+                        "button"
+                    ],
+                    "testtool": "ARC Tool Kit",
+                    "testmethod": "Graphical user interface elements (all linked/interactive graphics and images) must be provided with alternative texts [...][...]"
                 }
             ]
         }
     },
     {
         "id": "01-02",
-        "category": "Typography & Text",
-        "bitv": "1.2",
-        "title": "Contrast",
+        "category": "Form",
+        "bitv": "5.3",
+        "title": "Biometrics",
         "applicable": "applicable",
         "roles": [
-            "ux"
+            "ux",
+            "dev"
         ],
         "dods": {
+            "audittasks": [
+                {
+                    "roletitle": "Audit"
+                },
+                {
+                    "taskid": "01-02-audit-01",
+                    "taskdesc": "",
+                    "tasktype": "",
+                    "taskcat": [],
+                    "testtool": "Figma Plugin xyz",
+                    "testmethod": "Test it like it's hot"
+                }
+            ],
             "uxtasks": [
                 {
                     "roletitle": "User Experience"
                 },
                 {
                     "taskid": "01-02-ux-01",
-                    "taskdesc": "Is the minimum contrast ratio of 4.5:1 for normal text and 3:1 for bold text met?",
+                    "taskdesc": "UX Lorem ipsum task 1",
                     "tasktype": "pattern",
                     "taskcat": [
-                        "font",
+                        "design",
+                        "color",
+                        "button"
+                    ],
+                    "testtool": "Figma Plugin xyz",
+                    "testmethod": "Test it like it's hot"
+                },
+                {
+                    "taskid": "01-02-ux-02",
+                    "taskdesc": "Lorem ipsum task 2 UX",
+                    "tasktype": "page",
+                    "taskcat": [
+                        "forms",
                         "contrast"
                     ],
-                    "testtool": "",
-                    "testmethod": ""
+                    "testtool": "Browser Plugin xyz",
+                    "testmethod": "Test it like it's hot"
+                }
+            ],
+            "devtasks": [
+                {
+                    "roletitle": "Frontend Development"
+                },
+                {
+                    "taskid": "01-02-dev-01",
+                    "taskdesc": "Dev Lorem ipsum task 1",
+                    "tasktype": "pattern",
+                    "taskcat": [
+                        "color",
+                        "button"
+                    ],
+                    "testtool": "Chrome Plugin xyz",
+                    "testmethod": "Test it like it's hot"
+                }
+            ],
+            "edttasks": [
+                {
+                    "roletitle": "Editorial"
+                },
+                {
+                    "taskid": "01-02-edt-01",
+                    "taskdesc": "Editorial lorem ipsum task 1",
+                    "tasktype": "page",
+                    "taskcat": [
+                        "cms",
+                        "button",
+                        "text"
+                    ],
+                    "testtool": "Figma Plugin xyz",
+                    "testmethod": "Test it like it's hot"
                 }
             ]
         }
