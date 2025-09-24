@@ -43,7 +43,7 @@
                 },
                 {
                     "taskid": "01-02-ux-01",
-                    "taskdesc": "Is the minimum contrast ratio of 4.5:1 for normal text and 3:1 for bold text met?",
+                    "taskdesc": "Is the minimum contrast ratio of 4.5:1 for normal text and 3:1 for bold text met? <img src='https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoidm9kYWZvbmVcL2ZpbGVcL3RFN2pwYVE1SG5uUFdITEwxRjVzLnBuZyJ9:vodafone:jacz8PehbM6hTOOP9DowhwPpFXVutsYz73iWLszxS_M?width=1200&format=webp&quality=100' class='instrimg' alt=''>",
                     "tasktype": "pattern",
                     "taskcat": [
                         "font",
@@ -71,7 +71,7 @@
                 },
                 {
                     "taskid": "02-01-ux-01",
-                    "taskdesc": "Is color used alone to convey meaning (e.g., red = error)? <img src='https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoidm9kYWZvbmVcL2ZpbGVcL2lVY1J1ckhOWUw0eTZCSll0dzl1LnBuZyJ9:vodafone:hR8rB-6-cnkFgFwNrriRf1BXtXPkKtwXbYU2f-1ArvY?width=684&format=webp&quality=100' class='instrimg' alt=''>",
+                    "taskdesc": "Is color used alone to convey meaning (e.g., red = error)?",
                     "tasktype": "pattern",
                     "taskcat": [
                         "color",
