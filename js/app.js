@@ -1939,7 +1939,7 @@ $(document).ready(() => {
             summaryOverlayContent.empty();
 
             const counterContent = $('#counter').clone();
-            const summaryHead = $('<div class="summaryHead"><h2>Test results according to test criteria</h2></div>');
+            const summaryHead = $('<div class="summaryHead"><h1>Test results according to test criteria</h1></div>');
             summaryOverlayContent.append(summaryHead);
 
         
@@ -1949,16 +1949,13 @@ $(document).ready(() => {
                 const auditInfoSection = $(`
                     <div class="projectInfo summaryCardFlat">
                         <div class="infoContainer">
-                            <h1>Audit Information</h1>
+                            <h2>Audit Information</h2>
                             <p><strong>Audit name:</strong> ${auditData.auditName}</p>
                             <p><strong>Audited by:</strong> ${auditData.auditedBy}</p>
                             <p><strong>E-mail address:</strong> ${auditData.emailAddress}</p>
                             <p><strong>Audit object:</strong> ${auditData.auditObject}</p>
                             <p><strong>URL:</strong> <a href="${auditData.url}" target="_blank">${auditData.url}</a></p>
                             <p><strong>Further information:</strong> ${auditData.furtherInfo}</p>
-                            <div class="audit-images">
-                            ${auditData.images.map(src => `<img src="${src}" class="audit-image-thumbnail">`).join('')}
-                            </div>
                         </div>
                     </div>
                 `);
