@@ -1433,58 +1433,10 @@ $(document).ready(() => {
                 <button class="dropdown-button-roles overlayKeyOff">Select Roles <svg aria-hidden="true" class="dropdown-item__chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192"><polyline class="st0" points="164 62 96 130 28 62" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"></polyline></svg></button>
                 <div class="dropdown-content-roles">
                     <ul id="filter-options" class="dropdownContainer">
-                    <li>
-                            <label>
-                            <input type="checkbox" value="filter_audit" data-filter_id="audit">
-                            <span class="ws10-text">Accessibility Audit</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                            <input type="checkbox" value="filter_cm" data-filter_id="cm">
-                            <span class="ws10-text">Channel Management</span>
-                            </label>
-                        </li>
                         <li>
                             <label>
                             <input type="checkbox" value="filter_ux" data-filter_id="ux">
                             <span class="ws10-text">User Experience</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                            <input type="checkbox" value="filter_dev" data-filter_id="dev">
-                            <span class="ws10-text">Frontend Development</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                            <input type="checkbox" value="filter_edt" data-filter_id="edt">
-                            <span class="ws10-text">Editorial</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                            <input type="checkbox" value="filter_testing" data-filter_id="testing">
-                            <span class="ws10-text">Testing</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                            <input type="checkbox" value="filter_testingwftooltasks" data-filter_id="testingwftooltasks">
-                            <span class="ws10-text">WF Testing: Tool supported</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                            <input type="checkbox" value="filter_testingwfmantasks" data-filter_id="testingwfmantasks">
-                            <span class="ws10-text">WF Testing: Manual without additional info</span>
-                            </label>
-                        </li>
-                        <li>
-                            <label>
-                            <input type="checkbox" class="overlayKeyOff" value="filter_testingwfmanexttasks" data-filter_id="testingwfmanexttasks">
-                            <span class="ws10-text">WF Testing: Manual with additional info</span>
                             </label>
                         </li>
                     </ul>
