@@ -1936,9 +1936,10 @@ padding-top: 50px;
   .ws10-fade.ws10-overlay--slide .ws10-overlay__container {
       position: absolute;
       right: -419px;
-      width: 419px;
+      width: 100%;
       transition: right .5s cubic-bezier(0.47, 0, 0.745, 0.715);
       transform: none;
+      max-width: 800px;
   }
 }
 
