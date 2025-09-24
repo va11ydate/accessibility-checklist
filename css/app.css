@@ -2344,7 +2344,7 @@ padding-top: 50px;
   background-color: #fff;
   backface-visibility: hidden;
   transform: translateZ(0) scale(1, 1);
-  padding: 16px;
+  padding: 16px 8px;
 }
 
 .brix-gn__logo {
@@ -3428,6 +3428,14 @@ stroke: #c40000;
 
 }
 
+
+.comment-controls {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-end;
+}
+
 .commentFunctionsButtons {
   grid-row-start: 1;
     border-radius: 6px;
@@ -3465,7 +3473,6 @@ stroke: #c40000;
   display:flex;
   align-self: center;
  gap:8px;
- padding-right:8px;
 }
 
 .toolBarItem {
@@ -3634,7 +3641,7 @@ display:none;
 
 }
 
-/* Small desktop view */
+/* Mobile view */
 
 
 @media only screen and (max-width: 1049px) and (-webkit-min-device-pixel-ratio:0) {
@@ -3923,6 +3930,17 @@ color:#e60000;
       font-size: var(--ws10-font-size-200);
 }
 
+.toolBar {
+    display: flex;
+    align-self: center;
+    gap: 8px;
+    padding-right:8px;
+}
+
+#audit-info-container {
+  padding: 0 8px;
+}
+
 .taskContainer {
     display: flex;
     margin-bottom: 24px;
@@ -4191,6 +4209,19 @@ padding-right:16px;
 
 }
 
+
+.auditTitle {
+    align-self: center;
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 16px;
+}
+
+#audit-info-container {
+  padding: 0 8px;
+}
+
+
   #content-wrapper {
     margin: auto;
     min-width: auto;
@@ -4302,6 +4333,17 @@ padding-right:16px;
     margin-bottom: 24px;
     padding: 0 8px;
 }
+
+.auditTitle {
+        align-self: center;
+        font-size: 16px;
+        font-weight: 700;
+        margin-left: 16px;
+        text-overflow: ellipsis;
+        max-width: 180px;
+        overflow: hidden;
+        white-space: nowrap;
+    }
 
 .small-vw
 

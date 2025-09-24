@@ -123,6 +123,7 @@ $(document).ready(function() {
                         <div class="comment-item" data-comment-text="${comment.text}" data-comment-type="${comment.type}" data-images='${JSON.stringify(comment.images)}'>
                             <div class="comment-title">${comment.title}</div>
                             <span class="comment-type-display ${comment.type}">${comment.type}</span>
+                            <div class="comment-controls">
                             <button class="edit-comment-button overlayKeyOff commentFunctionsButtons">
                                 <svg class="icon24" id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
                                     <polyline class="st0" points="147.38 70.11 121.57 44.02 36.49 129.1 27.77 164 62.67 155.27 147.38 70.11" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
@@ -139,6 +140,7 @@ $(document).ready(function() {
                                     <path class="st0" d="M148,44V156a16,16,0,0,1-16,16H60a16,16,0,0,1-16-16V44" fill="none" stroke-linejoin="round" stroke-width="8"/>
                                 </svg>
                             </button>
+                            </div>
                         </div>
                     `);
                     if (comment.images.length > 0) {
@@ -1216,6 +1218,7 @@ class CommentOverlay {
                         <div class="comment-item" data-comment-text="${comment.text}" data-comment-type="${comment.type}" data-images='${JSON.stringify(comment.images)}'>
                             <div class="comment-title">${comment.title}</div>
                             <span class="comment-type-display ${comment.type}">${comment.type}</span>
+                            <div class="comment-controls">
                             <button class="edit-comment-button overlayKeyOff commentFunctionsButtons">
                                 <svg class="icon24" id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
                                     <polyline class="st0" points="147.38 70.11 121.57 44.02 36.49 129.1 27.77 164 62.67 155.27 147.38 70.11" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
@@ -1232,6 +1235,7 @@ class CommentOverlay {
                                     <path class="st0" d="M148,44V156a16,16,0,0,1-16,16H60a16,16,0,0,1-16-16V44" fill="none" stroke-linejoin="round" stroke-width="8"/>
                                 </svg>
                             </button>
+                            </div>
                         </div>
                     `);
                     if (comment.images.length > 0) {
@@ -1324,6 +1328,7 @@ function loadState() {
                     <div class="comment-item" data-comment-text="${comment.text}" data-comment-type="${comment.type}" data-images='${JSON.stringify(comment.images)}'>
                         <div class="comment-title">${comment.title}</div>
                         <span class="comment-type-display ${comment.type}">${comment.type}</span>
+                        <div class="comment-controls">
                         <button class="edit-comment-button overlayKeyOff commentFunctionsButtons">
                             <svg class="icon24" id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
                                 <polyline class="st0" points="147.38 70.11 121.57 44.02 36.49 129.1 27.77 164 62.67 155.27 147.38 70.11" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
@@ -1340,6 +1345,7 @@ function loadState() {
                                 <path class="st0" d="M148,44V156a16,16,0,0,1-16,16H60a16,16,0,0,1-16-16V44" fill="none" stroke-linejoin="round" stroke-width="8"/>
                             </svg>
                         </button>
+                        </div>
                     </div>
                 `);
                 if (comment.images.length > 0) {
