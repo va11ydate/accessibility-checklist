@@ -2774,6 +2774,16 @@ font-size:12px;
 
 }
 
+.taskdesc img {
+
+max-width: 230px;
+
+}
+
+
+
+
+
 .filter-number-badge {
   position: absolute;
   background: #00697c;
@@ -2957,6 +2967,7 @@ font-size:12px;
 .instrimg {
     width: 100%;
     margin: 16px 0;
+    display: flex;
 }
 
 
@@ -3461,8 +3472,8 @@ stroke: #c40000;
     }
 
     .commentFunctionsButtons:hover {
-      background: rgb(217, 217, 217);
-      border: 2px solid transparent;
+  background: var(--ws10-color-monochrome-100);
+    border: 2px solid var(--ws10-color-monochrome-600);
         }
 
 
