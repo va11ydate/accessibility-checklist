@@ -1317,6 +1317,7 @@ bindEvents() {
 
     getCommentButtonsTemplate() {
         return `
+        <div class="comment-controls">
             <button class="edit-comment-button overlayKeyOff commentFunctionsButtons" aria-label="edit issue">
                 <svg class="icon24" id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
                     <polyline class="st0" points="147.38 70.11 121.57 44.02 36.49 129.1 27.77 164 62.67 155.27 147.38 70.11" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
@@ -1333,6 +1334,7 @@ bindEvents() {
                     <path class="st0" d="M148,44V156a16,16,0,0,1-16,16H60a16,16,0,0,1-16-16V44" fill="none" stroke-linejoin="round" stroke-width="8"/>
                 </svg>
             </button>
+            </div>
         `;
     }
 
@@ -1847,9 +1849,17 @@ $(document).ready(() => {
                                 }
                         
                                 if (task.tasktype) {
-                                    li.append($('<div><strong>Type:</strong></div>').addClass('tasktype-desc'));
-                                    li.append($('<div>').addClass('tasktype').text(task.tasktype));
-                                }
+    // Container erzeugen
+    const tasktypeContainer = $('<div>').addClass('tasktype-container');
+
+    // Inhalt hinzufügen
+    tasktypeContainer.append($('<div><strong>Type:</strong></div>').addClass('tasktype-desc'));
+    tasktypeContainer.append($('<div>').addClass('tasktype').text(task.tasktype));
+
+    // Container ins li einfügen
+    li.append(tasktypeContainer);
+}
+
 
 
                                
@@ -1960,7 +1970,7 @@ $(document).ready(() => {
                                 li.append(rightColumn);
 
                                 const openButton = $('<button id="open-overlay" class="ws10-button-link ws10-button-link--color-primary-200 overlayKeyOff" style="grid-column-start: 1;">test instructions<svg id="icon" class="ws10-button-link__icon ws10-button-link__icon--right ws10-system-icon ws10-system-icon--size-150 ws10-system-icon--color-primary-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192"><polyline class="st0" points="62 28 130 96 62 164" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/></svg></button>');
-                                li.append(openButton);
+                                rightColumn.append(openButton);
                                 
                                 applicableCheckbox.on('change', function() {
                                     const isChecked = $(this).is(':checked');
@@ -2009,7 +2019,10 @@ $(document).ready(() => {
                               
                               const addCommentButton = $('<button id="addComment" class="overlayKeyOff">add issue<svg id="icon" class="ws10-button-link__icon ws10-button-link__icon--right ws10-system-icon ws10-system-icon--size-150 ws10-system-icon--color-primary-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192"><polyline class="st0" points="62 28 130 96 62 164" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/></svg></button>').addClass('add-comment-button ws10-button-link ws10-button-link--color-primary-200');
                               const commentsDiv = $('<div><h5 class="comment-optionslegend">issues</h5>').addClass('comments').hide();
-                              li.append(addCommentButton).append(commentsDiv);
+                              
+                              rightColumn.append(addCommentButton);
+
+                              li.append(commentsDiv);
 
                               rightColumn.append(commentsDiv);
             
