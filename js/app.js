@@ -760,25 +760,23 @@ class CommentOverlay {
         $('body').append(this.commentOverlay);
     }
 
-    bindEvents() {
-        const events = [
-            { selector: '.add-comment-button', event: 'click', handler: this.showAddCommentOverlay },
-            { selector: '.edit-comment-button', event: 'click', handler: this.showEditCommentOverlay },
-            { selector: '#save-comment', event: 'click', handler: this.saveComment },
-            { selector: '#cancel-comment', event: 'click', handler: this.hideOverlay },
-            { selector: '.delete-comment-button', event: 'click', handler: this.deleteComment },
-            { selector: document, event: 'keydown', handler: this.handleEscapeKey },
-            { selector: '#image-upload-area', event: 'click', handler: () => $('#image-upload-input').click() },
-            { selector: '#image-upload-input', event: 'change', handler: this.handleImageUpload },
-            { selector: '.uploadedImageThumbnail', event: 'click', handler: this.openLightbox },
-            { selector: '.close-lightbox', event: 'click', handler: this.closeLightbox },
-            { selector: '.delete-image-button', event: 'click', handler: this.deleteImage },
-        ];
+bindEvents() {
+  const events = [
+    { selector: '.add-comment-button', event: 'click', handler: this.showAddCommentOverlay },
+    { selector: '.edit-comment-button', event: 'click', handler: this.showEditCommentOverlay },
+    { selector: '#save-comment', event: 'click', handler: this.saveComment },
+    { selector: '#cancel-comment', event: 'click', handler: this.hideOverlay },
+    { selector: '.delete-comment-button', event: 'click', handler: this.deleteComment },
+    { selector: document, event: 'keydown', handler: this.handleEscapeKey },
+    { selector: '.uploadedImageThumbnail', event: 'click', handler: this.openLightbox },
+    { selector: '.close-lightbox', event: 'click', handler: this.closeLightbox }
+  ];
 
-        events.forEach(({ selector, event, handler }) => {
-            $(document).on(event, selector, (e) => handler.call(this, e));
-        });
-    }
+  events.forEach(({ selector, event, handler }) => {
+    $(document).on(event, selector, (e) => handler.call(this, e));
+  });
+}
+
 
     getOverlayTemplate() {
         return `
@@ -808,10 +806,10 @@ class CommentOverlay {
 
     getCommentFormTemplate() {
         return `
-            <h5>Add or edit comment</h5>
+            <h5>Add or edit issue</h5>
             <div class="ws10-form-element-block ws10-form-element-block--text-input">
                 <div class="ws10-form-element-block__label-container">
-                    <label for="comment-title" class="ws10-form-label">Comment</label>
+                    <label for="comment-title" class="ws10-form-label">Issue</label>
                 </div>
                 <div class="ws10-form-element-block__input-container">
                     <div class="ws10-form-text-input">
@@ -829,7 +827,7 @@ class CommentOverlay {
             </div>
             <div class="ws10-form-element-block ws10-form-element-block--select">
                 <div class="ws10-form-element-block__label-container">
-                    <label for="comment-type" class="ws10-form-label">Comment Type</label>
+                    <label for="comment-type" class="ws10-form-label">Issue Type</label>
                 </div>
                 <div class="ws10-form-element-block__input-container">
                     <select id="comment-type" class="ws10-form-select ws10-form-select__select">
@@ -858,18 +856,48 @@ class CommentOverlay {
         `;
     }
 
-    getImageUploadTemplate() {
-        return `
-            <div class="ws10-form-element-block__label-container">
-                <label class="ws10-form-label">Add screenshots (jpg/png)</label>
-            </div>
-            <div id="image-upload-container">
-                <input type="file" id="image-upload-input" accept=".jpg,.png" style="display: none;">
-                <div id="image-upload-area"><span>add jpg/png</span></div>
-            </div>
-            <div id="image-thumbnails" class="image-thumbnails"></div>
-        `;
-    }
+    getImageUploadTemplate(contextId = 'issue') {
+  const id = (suffix) => `${contextId}-${suffix}`;
+  return `
+    <div class="ws10-form-element-block__label-container">
+      <label class="ws10-form-label" for="${id('image-url-input')}">Add screenshots by URL (jpg/png)</label>
+    </div>
+
+    <div id="${id('image-url-container')}" class="image-url-container">
+      <div class="image-url-input-row">
+        <input
+          id="${id('image-url-input')}"
+          type="url"
+          inputmode="url"
+          placeholder="https://…/screenshot.jpg  (Enter zum Hinzufügen)"
+          class="ws10-form-input"
+          aria-describedby="${id('image-url-help')}"
+        />
+        <button id="${id('image-url-add-btn')}" type="button" class="ws10-button ws10-button--primary">
+          Add
+        </button>
+      </div>
+      <div id="${id('image-url-help')}" class="image-url-help">
+        Tipp: Du kannst auch mehrere URLs auf einmal einfügen (durch Komma, Leerzeichen oder Zeilenumbruch getrennt).
+      </div>
+
+      <div class="image-url-bulk">
+        <details>
+          <summary>Mehrere URLs auf einmal einfügen</summary>
+          <textarea id="${id('image-url-bulk-textarea')}" rows="4" placeholder="Eine oder mehrere Bild-URLs einfügen…"></textarea>
+          <div class="bulk-actions">
+            <button id="${id('image-url-bulk-add')}" type="button" class="ws10-button">Alle hinzufügen</button>
+            <button id="${id('image-url-bulk-clear')}" type="button" class="ws10-button ws10-button--ghost">Feld leeren</button>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div id="${id('image-thumbnails')}" class="image-thumbnails" aria-live="polite"></div>
+  `;
+}
+
+
 
     getButtonsTemplate() {
         return `
@@ -925,38 +953,50 @@ class CommentOverlay {
         textarea.style.height = `${Math.max(textarea.scrollHeight, minHeight)}px`;
     }
 
-    showAddCommentOverlay(e) {
-        e.stopPropagation();
-        this.currentTaskContainer = $(e.currentTarget).closest('li.taskContainer');
-        this.currentCommentItem = null;
-        $('#comment-title').val('');
-        $('#comment-text').val('');
-        $('#comment-type').val('violation');
-        $('#image-upload-area').html('<a class="imageUploadLink" href="#/"><div><svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="iconRed" d="M3.15753 14.6153C3.01548 14.8521 3.0923 15.1592 3.3291 15.3013C3.56591 15.4433 3.87303 15.3665 4.01508 15.1297L3.15753 14.6153ZM7.5288 8.29998L7.88236 7.94643C7.77348 7.83755 7.62051 7.78491 7.46768 7.80373C7.31486 7.82255 7.17923 7.91074 7.10003 8.04278L7.5288 8.29998ZM13.6763 14.4475L13.3227 14.801C13.518 14.9963 13.8346 14.9963 14.0299 14.801L13.6763 14.4475ZM15.9113 12.2125L16.2648 11.8589C16.0695 11.6637 15.753 11.6637 15.5577 11.8589L15.9113 12.2125ZM20.1465 17.1536C20.3418 17.3488 20.6584 17.3488 20.8537 17.1535C21.0489 16.9582 21.0488 16.6416 20.8536 16.4464L20.1465 17.1536ZM5.5 3.5V3V3.5ZM20.5 3.5H21C21 3.22386 20.7761 3 20.5 3V3.5ZM3.5 18.5H3H3.5ZM4.01508 15.1297L7.95758 8.55718L7.10003 8.04278L3.15753 14.6153L4.01508 15.1297ZM7.17525 8.65353L13.3227 14.801L14.0299 14.0939L7.88236 7.94643L7.17525 8.65353ZM14.0299 14.801L16.2649 12.566L15.5577 11.8589L13.3227 14.0939L14.0299 14.801ZM15.5578 12.5661L20.1465 17.1536L20.8536 16.4464L16.2648 11.8589L15.5578 12.5661ZM16.0625 8C16.0625 8.5868 15.5868 9.0625 15 9.0625V10.0625C16.1391 10.0625 17.0625 9.13909 17.0625 8H16.0625ZM15 9.0625C14.4132 9.0625 13.9375 8.5868 13.9375 8H12.9375C12.9375 9.13909 13.8609 10.0625 15 10.0625V9.0625ZM13.9375 8C13.9375 7.4132 14.4132 6.9375 15 6.9375V5.9375C13.8609 5.9375 12.9375 6.86091 12.9375 8H13.9375ZM15 6.9375C15.5868 6.9375 16.0625 7.4132 16.0625 8H17.0625C17.0625 6.86091 16.1391 5.9375 15 5.9375V6.9375ZM5.5 4H20.5V3H5.5V4ZM20 3.5V18.5H21V3.5H20ZM20 18.5C20 18.8978 19.842 19.2794 19.5607 19.5607L20.2678 20.2678C20.7366 19.7989 21 19.163 21 18.5H20ZM19.5607 19.5607C19.2794 19.842 18.8978 20 18.5 20V21C19.163 21 19.7989 20.7366 20.2678 20.2678L19.5607 19.5607ZM18.5 20H5.5V21H18.5V20ZM5.5 20C5.10218 20 4.72064 19.842 4.43934 19.5607L3.73223 20.2678C4.20107 20.7366 4.83696 21 5.5 21V20ZM4.43934 19.5607C4.15804 19.2794 4 18.8978 4 18.5H3C3 19.163 3.26339 19.7989 3.73223 20.2678L4.43934 19.5607ZM4 18.5V5.5H3V18.5H4ZM4 5.5C4 5.10218 4.15804 4.72064 4.43934 4.43934L3.73223 3.73223C3.26339 4.20107 3 4.83696 3 5.5H4ZM4.43934 4.43934C4.72064 4.15804 5.10218 4 5.5 4V3C4.83696 3 4.20107 3.26339 3.73223 3.73223L4.43934 4.43934Z" fill="#0D0D0D"/><circle class="iconRed" cx="20.5" cy="3.5" r="3.5" fill="#0D0D0D"/><path class="iconRed" d="M19 3.5H22M20.5 2V5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Browse to add jpg/png</a>');
-        $('#image-thumbnails').empty();
-        $('#comment-overlay').show();
-        this.toggleBackdrop(true);
-    }
+   showAddCommentOverlay(e) {
+  e.stopPropagation();
+  this.currentTaskContainer = $(e.currentTarget).closest('li.taskContainer');
+  this.currentCommentItem = null;
+
+  $('#comment-title').val('');
+  $('#comment-text').val('');
+  $('#comment-type').val('violation');
+
+  // ⚠️ Alte File-Upload-UI NICHT mehr anfassen/füllen
+  // $('#image-upload-area')...  -> ENTFÄLLT
+  // $('#image-thumbnails').empty(); -> ENTFÄLLT (neue IDs!)
+
+  // Neue URL-UI initialisieren (Default contextId: 'issue')
+  initImageUrlModule('issue', []); // leer starten
+
+  $('#comment-overlay').show();
+  this.toggleBackdrop(true);
+}
+
 
     showEditCommentOverlay(e) {
-        e.stopPropagation();
-        this.currentTaskContainer = $(e.currentTarget).closest('li.taskContainer');
-        this.currentCommentItem = $(e.currentTarget).closest('.comment-item');
-        const title = this.currentCommentItem.find('.comment-title').text();
-        const text = this.currentCommentItem.data('comment-text');
-        const type = this.currentCommentItem.data('comment-type');
-        $('#comment-title').val(title);
-        $('#comment-text').val(text);
-        $('#comment-type').val(type);
-        $('#image-upload-area').html('<a class="imageUploadLink" href="#/"><div><svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path class="iconRed" d="M3.15753 14.6153C3.01548 14.8521 3.0923 15.1592 3.3291 15.3013C3.56591 15.4433 3.87303 15.3665 4.01508 15.1297L3.15753 14.6153ZM7.5288 8.29998L7.88236 7.94643C7.77348 7.83755 7.62051 7.78491 7.46768 7.80373C7.31486 7.82255 7.17923 7.91074 7.10003 8.04278L7.5288 8.29998ZM13.6763 14.4475L13.3227 14.801C13.518 14.9963 13.8346 14.9963 14.0299 14.801L13.6763 14.4475ZM15.9113 12.2125L16.2648 11.8589C16.0695 11.6637 15.753 11.6637 15.5577 11.8589L15.9113 12.2125ZM20.1465 17.1536C20.3418 17.3488 20.6584 17.3488 20.8537 17.1535C21.0489 16.9582 21.0488 16.6416 20.8536 16.4464L20.1465 17.1536ZM5.5 3.5V3V3.5ZM20.5 3.5H21C21 3.22386 20.7761 3 20.5 3V3.5ZM3.5 18.5H3H3.5ZM4.01508 15.1297L7.95758 8.55718L7.10003 8.04278L3.15753 14.6153L4.01508 15.1297ZM7.17525 8.65353L13.3227 14.801L14.0299 14.0939L7.88236 7.94643L7.17525 8.65353ZM14.0299 14.801L16.2649 12.566L15.5577 11.8589L13.3227 14.0939L14.0299 14.801ZM15.5578 12.5661L20.1465 17.1536L20.8536 16.4464L16.2648 11.8589L15.5578 12.5661ZM16.0625 8C16.0625 8.5868 15.5868 9.0625 15 9.0625V10.0625C16.1391 10.0625 17.0625 9.13909 17.0625 8H16.0625ZM15 9.0625C14.4132 9.0625 13.9375 8.5868 13.9375 8H12.9375C12.9375 9.13909 13.8609 10.0625 15 10.0625V9.0625ZM13.9375 8C13.9375 7.4132 14.4132 6.9375 15 6.9375V5.9375C13.8609 5.9375 12.9375 6.86091 12.9375 8H13.9375ZM15 6.9375C15.5868 6.9375 16.0625 7.4132 16.0625 8H17.0625C17.0625 6.86091 16.1391 5.9375 15 5.9375V6.9375ZM5.5 4H20.5V3H5.5V4ZM20 3.5V18.5H21V3.5H20ZM20 18.5C20 18.8978 19.842 19.2794 19.5607 19.5607L20.2678 20.2678C20.7366 19.7989 21 19.163 21 18.5H20ZM19.5607 19.5607C19.2794 19.842 18.8978 20 18.5 20V21C19.163 21 19.7989 20.7366 20.2678 20.2678L19.5607 19.5607ZM18.5 20H5.5V21H18.5V20ZM5.5 20C5.10218 20 4.72064 19.842 4.43934 19.5607L3.73223 20.2678C4.20107 20.7366 4.83696 21 5.5 21V20ZM4.43934 19.5607C4.15804 19.2794 4 18.8978 4 18.5H3C3 19.163 3.26339 19.7989 3.73223 20.2678L4.43934 19.5607ZM4 18.5V5.5H3V18.5H4ZM4 5.5C4 5.10218 4.15804 4.72064 4.43934 4.43934L3.73223 3.73223C3.26339 4.20107 3 4.83696 3 5.5H4ZM4.43934 4.43934C4.72064 4.15804 5.10218 4 5.5 4V3C4.83696 3 4.20107 3.26339 3.73223 3.73223L4.43934 4.43934Z" fill="#0D0D0D"/><circle class="iconRed" cx="20.5" cy="3.5" r="3.5" fill="#0D0D0D"/><path class="iconRed" d="M19 3.5H22M20.5 2V5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Browse to add jpg/png</a>');
-        $('#image-thumbnails').empty();
-        const images = this.currentCommentItem.data('images') || [];
-        images.forEach((src) => {
-            $('#image-thumbnails').append(this.createImageThumbnail(src));
-        });
-        $('#comment-overlay').show();
-        this.toggleBackdrop(true);
-    }
+  e.stopPropagation();
+  this.currentTaskContainer = $(e.currentTarget).closest('li.taskContainer');
+  this.currentCommentItem = $(e.currentTarget).closest('.comment-item');
+
+  const title = this.currentCommentItem.find('.comment-title').text();
+  const text  = this.currentCommentItem.data('comment-text');
+  const type  = this.currentCommentItem.data('comment-type');
+
+  $('#comment-title').val(title);
+  $('#comment-text').val(text);
+  $('#comment-type').val(type);
+
+  // Bestehende Bild-URLs aus dem Comment holen
+  const images = this.currentCommentItem.data('images') || [];
+
+  // URL-UI initialisieren und mit vorhandenen URLs befüllen
+  initImageUrlModule('issue', images);
+
+  $('#comment-overlay').show();
+  this.toggleBackdrop(true);
+}
+
 
 /*     saveComment(e) {
         e.stopPropagation();
@@ -986,7 +1026,8 @@ class CommentOverlay {
             const title = $('#comment-title').val().trim();
             const text = $('#comment-text').val().trim();
             const type = $('#comment-type').val();
-            const images = this.getUploadedImages();
+            const images = getImageUrls('issue');
+
         
             if (title && text) {
                 localStorage.setItem('comment-title', title);
@@ -1219,14 +1260,14 @@ class CommentOverlay {
                             <div class="comment-title">${comment.title}</div>
                             <span class="comment-type-display ${comment.type}">${comment.type}</span>
                             <div class="comment-controls">
-                            <button class="edit-comment-button overlayKeyOff commentFunctionsButtons">
+                            <button class="edit-comment-button overlayKeyOff commentFunctionsButtons" aria-label="edit comment">
                                 <svg class="icon24" id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
                                     <polyline class="st0" points="147.38 70.11 121.57 44.02 36.49 129.1 27.77 164 62.67 155.27 147.38 70.11" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
                                     <path class="st0" d="M121.57,44l12.79-12.79a11,11,0,0,1,15.63,0l18,18.22L147.38,70.11" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/>
                                     <line class="st0" x1="39.55" y1="126.1" x2="65.73" y2="152.28" fill="none" stroke-miterlimit="10" stroke-width="8"/>
                                 </svg>
                             </button>
-                            <button class="delete-comment-button overlayKeyOff commentFunctionsButtons">
+                            <button class="delete-comment-button overlayKeyOff commentFunctionsButtons" aria-label="delete comment">
                                 <svg id="icon" class="icon24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
                                     <line class="st0" x1="112.01" y1="144" x2="112.01" y2="72" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
                                     <line class="st0" x1="80.01" y1="144" x2="80.01" y2="72" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
@@ -1276,14 +1317,15 @@ class CommentOverlay {
 
     getCommentButtonsTemplate() {
         return `
-            <button class="edit-comment-button overlayKeyOff commentFunctionsButtons">
+        <div class="comment-controls">
+            <button class="edit-comment-button overlayKeyOff commentFunctionsButtons" aria-label="edit issue">
                 <svg class="icon24" id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
                     <polyline class="st0" points="147.38 70.11 121.57 44.02 36.49 129.1 27.77 164 62.67 155.27 147.38 70.11" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
                     <path class="st0" d="M121.57,44l12.79-12.79a11,11,0,0,1,15.63,0l18,18.22L147.38,70.11" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/>
                     <line class="st0" x1="39.55" y1="126.1" x2="65.73" y2="152.28" fill="none" stroke-miterlimit="10" stroke-width="8"/>
                 </svg>
             </button>
-            <button class="delete-comment-button overlayKeyOff commentFunctionsButtons">
+            <button class="delete-comment-button overlayKeyOff commentFunctionsButtons" aria-label="delete issue">
                 <svg id="icon" class="icon24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
                     <line class="st0" x1="112.01" y1="144" x2="112.01" y2="72" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
                     <line class="st0" x1="80.01" y1="144" x2="80.01" y2="72" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
@@ -1292,6 +1334,7 @@ class CommentOverlay {
                     <path class="st0" d="M148,44V156a16,16,0,0,1-16,16H60a16,16,0,0,1-16-16V44" fill="none" stroke-linejoin="round" stroke-width="8"/>
                 </svg>
             </button>
+            </div>
         `;
     }
 
@@ -1306,6 +1349,187 @@ class CommentOverlay {
         $('.overlayKeyOff').attr("tabindex", show ? -1 : 1);
     }
 }
+
+
+/**
+ * Initialisiert Events/Rendering für die Bild-URL-UI.
+ * @param {string} contextId
+ * @param {string[]} initialUrls
+ */
+function initImageUrlModule(contextId, initialUrls = []) {
+  const q = (suffix) => document.getElementById(`${contextId}-${suffix}`);
+  const els = {
+    input: q('image-url-input'),
+    addBtn: q('image-url-add-btn'),
+    bulkTA: q('image-url-bulk-textarea'),
+    bulkAdd: q('image-url-bulk-add'),
+    bulkClear: q('image-url-bulk-clear'),
+    thumbs: q('image-thumbnails'),
+    container: q('image-url-container')
+  };
+
+  // interner Speicher auf dem Container (vermeidet LocalStorage)
+  els.container._imageUrls = Array.isArray(initialUrls) ? [...initialUrls] : [];
+
+  // Initial render
+  renderImageThumbnails(contextId);
+
+  // Einzel-Add: mit Button
+  els.addBtn?.addEventListener('click', () => {
+    const urls = parseUrlInput(els.input.value);
+    addUrls(contextId, urls);
+    els.input.value = '';
+  });
+
+  // Einzel-Add: mit Enter
+  els.input?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const urls = parseUrlInput(els.input.value);
+      addUrls(contextId, urls);
+      els.input.value = '';
+    }
+  });
+
+  // Bulk-Add
+  els.bulkAdd?.addEventListener('click', () => {
+    const urls = parseUrlInput(els.bulkTA.value);
+    addUrls(contextId, urls);
+  });
+
+  // Bulk-Clear
+  els.bulkClear?.addEventListener('click', () => {
+    els.bulkTA.value = '';
+  });
+
+  // Delegation: Entfernen einzelner Bilder
+  els.thumbs?.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-action="remove-image"]');
+    if (!btn) return;
+    const idx = Number(btn.getAttribute('data-index'));
+    removeUrlAt(contextId, idx);
+  });
+}
+
+/**
+ * Gibt die aktuell gesetzten Bild-URLs zurück.
+ * @param {string} contextId
+ * @returns {string[]}
+ */
+function getImageUrls(contextId) {
+  const container = document.getElementById(`${contextId}-image-url-container`);
+  return container?._imageUrls ? [...container._imageUrls] : [];
+}
+
+/**
+ * Überschreibt die Bild-URLs (z. B. beim Laden eines bestehenden Issues).
+ * @param {string} contextId
+ * @param {string[]} urls
+ */
+function setImageUrls(contextId, urls = []) {
+  const container = document.getElementById(`${contextId}-image-url-container`);
+  if (!container) return;
+  container._imageUrls = Array.isArray(urls) ? [...urls] : [];
+  renderImageThumbnails(contextId);
+}
+
+/* ------------------------ Hilfsfunktionen ------------------------ */
+
+function parseUrlInput(raw) {
+  if (!raw) return [];
+  // Split an Komma, Leerzeichen, Zeilenumbrüchen
+  const parts = raw
+    .split(/[\s,]+/g)
+    .map(s => s.trim())
+    .filter(Boolean);
+
+  // Grobe URL-Validierung: http(s) erforderlich
+  const urls = [];
+  for (const p of parts) {
+    try {
+      const u = new URL(p);
+      if (u.protocol === 'http:' || u.protocol === 'https:') {
+        urls.push(u.toString());
+      }
+    } catch {
+      // ignorieren, wenn keine gültige URL
+    }
+  }
+  return urls;
+}
+
+function addUrls(contextId, urls) {
+  if (!urls || urls.length === 0) return;
+  const container = document.getElementById(`${contextId}-image-url-container`);
+  if (!container) return;
+
+  const list = container._imageUrls || [];
+  // Duplikate vermeiden
+  const set = new Set(list);
+  let added = 0;
+  for (const u of urls) {
+    if (!set.has(u)) {
+      set.add(u);
+      added++;
+    }
+  }
+  container._imageUrls = Array.from(set);
+  if (added > 0) renderImageThumbnails(contextId);
+}
+
+function removeUrlAt(contextId, index) {
+  const container = document.getElementById(`${contextId}-image-url-container`);
+  if (!container || !Array.isArray(container._imageUrls)) return;
+  if (index < 0 || index >= container._imageUrls.length) return;
+  container._imageUrls.splice(index, 1);
+  renderImageThumbnails(contextId);
+}
+
+function renderImageThumbnails(contextId) {
+  const thumbs = document.getElementById(`${contextId}-image-thumbnails`);
+  const container = document.getElementById(`${contextId}-image-url-container`);
+  if (!thumbs || !container) return;
+
+  const urls = container._imageUrls || [];
+  if (urls.length === 0) {
+    thumbs.innerHTML = `<div class="image-thumbnails__empty">Keine Screenshots hinzugefügt.</div>`;
+    return;
+  }
+
+  thumbs.innerHTML = urls.map((url, i) => {
+    const safeUrlText = escapeHtml(url);
+    return `
+      <div class="image-thumb" data-index="${i}">
+        <div class="image-thumb__media">
+          <img src="${safeUrlText}" alt="Screenshot ${i + 1}" loading="lazy" onerror="this.closest('.image-thumb').classList.add('is-error');" />
+        </div>
+        <div class="image-thumb__meta">
+          <a class="image-thumb__link" href="${safeUrlText}" target="_blank" rel="noopener noreferrer" title="${safeUrlText}">
+            ${truncateMiddle(safeUrlText, 60)}
+          </a>
+          <button type="button" class="ws10-button ws10-button--ghost image-thumb__remove" data-action="remove-image" data-index="${i}">
+            Remove
+          </button>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function escapeHtml(s) {
+  return s.replace(/[&<>"']/g, c => (
+    { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[c]
+  ));
+}
+
+function truncateMiddle(str, max = 60) {
+  if (str.length <= max) return str;
+  const half = Math.floor((max - 1) / 2);
+  return `${str.slice(0, half)}…${str.slice(-half)}`;
+}
+
+
+
 
 function loadState() {
     const state = JSON.parse(localStorage.getItem('filterState'));
@@ -1329,7 +1553,7 @@ function loadState() {
                         <div class="comment-title">${comment.title}</div>
                         <span class="comment-type-display ${comment.type}">${comment.type}</span>
                         <div class="comment-controls">
-                        <button class="edit-comment-button overlayKeyOff commentFunctionsButtons">
+                        <button class="edit-comment-button overlayKeyOff commentFunctionsButtons" aria-label="edit issue">
                             <svg class="icon24" id="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
                                 <polyline class="st0" points="147.38 70.11 121.57 44.02 36.49 129.1 27.77 164 62.67 155.27 147.38 70.11" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
                                 <path class="st0" d="M121.57,44l12.79-12.79a11,11,0,0,1,15.63,0l18,18.22L147.38,70.11" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/>
@@ -1337,7 +1561,7 @@ function loadState() {
                             </svg>
                         </button>
                         <button class="delete-comment-button overlayKeyOff commentFunctionsButtons">
-                            <svg id="icon" class="icon24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+                            <svg id="icon" class="icon24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" aria-label="delete issue">
                                 <line class="st0" x1="112.01" y1="144" x2="112.01" y2="72" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
                                 <line class="st0" x1="80.01" y1="144" x2="80.01" y2="72" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
                                 <line class="st0" x1="36" y1="44" x2="156" y2="44" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
@@ -1625,9 +1849,17 @@ $(document).ready(() => {
                                 }
                         
                                 if (task.tasktype) {
-                                    li.append($('<div><strong>Type:</strong></div>').addClass('tasktype-desc'));
-                                    li.append($('<div>').addClass('tasktype').text(task.tasktype));
-                                }
+    // Container erzeugen
+    const tasktypeContainer = $('<div>').addClass('tasktype-container');
+
+    // Inhalt hinzufügen
+    tasktypeContainer.append($('<div><strong>Level:</strong></div>').addClass('tasktype-desc'));
+    tasktypeContainer.append($('<div>').addClass('tasktype').text(task.tasktype));
+
+    // Container ins li einfügen
+    li.append(tasktypeContainer);
+}
+
 
 
                                
@@ -1738,7 +1970,7 @@ $(document).ready(() => {
                                 li.append(rightColumn);
 
                                 const openButton = $('<button id="open-overlay" class="ws10-button-link ws10-button-link--color-primary-200 overlayKeyOff" style="grid-column-start: 1;">test instructions<svg id="icon" class="ws10-button-link__icon ws10-button-link__icon--right ws10-system-icon ws10-system-icon--size-150 ws10-system-icon--color-primary-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192"><polyline class="st0" points="62 28 130 96 62 164" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/></svg></button>');
-                                li.append(openButton);
+                                rightColumn.append(openButton);
                                 
                                 applicableCheckbox.on('change', function() {
                                     const isChecked = $(this).is(':checked');
@@ -1786,8 +2018,11 @@ $(document).ready(() => {
                               // Kommentarfunktion
                               
                               const addCommentButton = $('<button id="addComment" class="overlayKeyOff">add issue<svg id="icon" class="ws10-button-link__icon ws10-button-link__icon--right ws10-system-icon ws10-system-icon--size-150 ws10-system-icon--color-primary-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192"><polyline class="st0" points="62 28 130 96 62 164" fill="none" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/></svg></button>').addClass('add-comment-button ws10-button-link ws10-button-link--color-primary-200');
-                              const commentsDiv = $('<div><h5 class="comment-optionslegend">comments</h5>').addClass('comments').hide();
-                              li.append(addCommentButton).append(commentsDiv);
+                              const commentsDiv = $('<div><h5 class="comment-optionslegend">issues</h5>').addClass('comments').hide();
+                              
+                              rightColumn.append(addCommentButton);
+
+                              li.append(commentsDiv);
 
                               rightColumn.append(commentsDiv);
             
