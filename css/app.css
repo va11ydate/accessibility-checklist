@@ -1683,9 +1683,11 @@ padding-top: 50px;
      
   .taskcat {
     grid-column-start: 1;
-    margin: 16px 0 16px 0;
     display: flex;
     grid-column-end: span 2;
+    grid-column-start: 2;
+    grid-row-start: 2;
+    margin-bottom: 16px;
   }
 
   .taglistitems {
@@ -2767,7 +2769,7 @@ font-size:12px;
   margin-bottom:24px;}
 
 .taskdesc {
-  font-size: 18px;
+  font-size: 20px;
   margin: 0px 0px 16px 0;
   font-weight: normal;
   grid-column-start: 1;
@@ -3001,9 +3003,10 @@ max-width: 230px;
 
 
 .tasktype-container {
-    display: flex
-;
+    display: flex;
     gap: 8px;
+    grid-column-start: 1;
+    grid-row-start: 2;
 }
 
 .tasktype {

@@ -1853,7 +1853,7 @@ $(document).ready(() => {
     const tasktypeContainer = $('<div>').addClass('tasktype-container');
 
     // Inhalt hinzufügen
-    tasktypeContainer.append($('<div><strong>Type:</strong></div>').addClass('tasktype-desc'));
+    tasktypeContainer.append($('<div><strong>Level:</strong></div>').addClass('tasktype-desc'));
     tasktypeContainer.append($('<div>').addClass('tasktype').text(task.tasktype));
 
     // Container ins li einfügen
