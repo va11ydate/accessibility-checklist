@@ -1847,6 +1847,10 @@ $(document).ready(() => {
                                 if (task.taskdesc) {
                                     li.append($('<div>').addClass('taskdesc').html(task.taskdesc));
                                 }
+
+                                if (task.taskdescimg) {
+                                    li.append($('<div>').addClass('taskdescimg').html(task.taskdescimg));
+                                }
                         
                                 if (task.tasktype) {
     // Container erzeugen
