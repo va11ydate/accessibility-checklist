@@ -45,14 +45,43 @@
                 {
                     "taskid": "01-02-ux-01",
                     "taskdesc": "Is the minimum contrast ratio of 4.5:1 for normal text and 3:1 for bold text met?",
-                    "taskdescimg": "<img src='https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoidm9kYWZvbmVcL2ZpbGVcL3RFN2pwYVE1SG5uUFdITEwxRjVzLnBuZyJ9:vodafone:jacz8PehbM6hTOOP9DowhwPpFXVutsYz73iWLszxS_M?width=1200&format=webp&quality=100' class='instrimg' alt=''>",
+                    "taskdescimg": "<img src='https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoidm9kYWZvbmVcL2ZpbGVcL3plQm9weTd4WjdWOXNrWDdXdXlhLnBuZyJ9:vodafone:r-NgwQwfJKBh8N_CM_GUcn_oKpnv4aHxv9mUFEtC940?width=2400' class='instrimg' alt=''>",
                     "tasktype": "pattern",
                     "taskcat": [
                         "font",
                         "contrast"
                     ],
                     "testtool": "",
-                    "testmethod": ""
+                    "testmethod": "If the contrast is too low (e.g., light gray text on white), the text blurs into the background for many people, especially in bright sunlight or for older users."
+                }
+            ]
+        }
+    },
+    {
+        "id": "01-03",
+        "category": "Typography & Text",
+        "bitv": "1.3",
+        "title": "Heading",
+        "applicable": "applicable",
+        "roles": [
+            "ux"
+        ],
+        "dods": {
+            "uxtasks": [
+                {
+                    "roletitle": "User Experience"
+                },
+                {
+                    "taskid": "01-03-ux-01",
+                    "taskdesc": "Are headings concise and do they clearly describe the content that follows?",
+                    "taskdescimg": "<img src='https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoidm9kYWZvbmVcL2ZpbGVcL25TOFRQVmtjSlE5TFhaeXFpZ1VpLnBuZyJ9:vodafone:_Bk_5fxAe_UVDMusF4NtFw7bgBJ3yvZV4t2ItkUFztQ?width=2400' class='instrimg' alt=''> <img src='https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoidm9kYWZvbmVcL2ZpbGVcLzlLb0dQZmdkeFlqek54ekRMdnBGLnBuZyJ9:vodafone:LzH0v5TCWbgyRQ-WLRssvBw8rWXp4z-Z_PNxSPsD91g?width=2400' class='instrimg' alt=''>",
+                    "tasktype": "pattern",
+                    "taskcat": [
+                        "font",
+                        "contrast"
+                    ],
+                    "testtool": "",
+                    "testmethod": "Users (especially screen reader users) scan headings to see if the next section is relevant. Vague titles ('Section 1' or 'Details') are a waste of time."
                 }
             ]
         }
