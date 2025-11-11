@@ -654,7 +654,7 @@ $(document).ready(function() {
         const taskDesc = li.find('.taskdesc').html();
         const itemTitle = head5.html(); // Den Inhalt des <h5> Elements holen
         const testTool = li.find('.testtool').html();
-        const taskImg = li.find('.instrimg').html();
+        const taskImg = li.find('.taskdescimg').html();
         const testMethod = li.find('.testmethod').html();
         const testToolLink = li.find('.testtoollink').html();
     
@@ -665,10 +665,8 @@ $(document).ready(function() {
                 <div>
                     <h5>${itemTitle}</h5>
                     <p>${taskDesc}</p>
-                    <p>Test Tool: ${testTool}</p>
-                    <p>Test Method: ${testMethod}</p>
+                    <p>${testMethod}</p>
                     <p>${taskImg}</p>
-                    <p>Test Tool Link: ${testToolLink}</p>
                 </div>
             `);
             $('#slide-in-overlay').css('display', 'block').addClass('ws10-in'); /*.css('transform', 'translateX(0)')*/
