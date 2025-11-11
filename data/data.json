@@ -15,14 +15,15 @@
                 },
                 {
                     "taskid": "01-01-ux-01",
-                    "taskdesc": "Is the font size for normal text less than 24px and for bold text less than 19px?",
+                    "taskdesc": "Is the body text compliant with the Vodafone Design System (e.g., min. 16px) and clearly readable?",
+                    "taskdescimg": "<img src='https://cdn-assets-eu.frontify.com/s3/frontify-enterprise-files-eu/eyJwYXRoIjoidm9kYWZvbmVcL2ZpbGVcL0R3ZWFYdGRlNWlRWXNMazdFODJyLnBuZyJ9:vodafone:ttgb15OdezqgoD70gTjlrOlR3iEjIfXDAa7582FvmXo?width=1040' class='instrimg' alt=''>",
                     "tasktype": "pattern",
                     "taskcat": [
                         "font",
                         "size"
                     ],
                     "testtool": "",
-                    "testmethod": ""
+                    "testmethod": " Text that is too small (e.g., 10px-12px) excludes users. Our standard (16px) is the minimum for readable body text and must be paired with sufficient contrast and line spacing to work."
                 }
             ]
         }
