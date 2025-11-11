@@ -1849,7 +1849,7 @@ $(document).ready(() => {
                                 }
 
                                 if (task.taskdescimg) {
-                                    li.append($('<div>').addClass('taskdescimg').html(task.taskdescimg));
+                                    li.append($('<div style="width:0; height:0;">').addClass('taskdescimg').html(task.taskdescimg));
                                 }
                         
                                 if (task.tasktype) {
